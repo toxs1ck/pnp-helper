@@ -2,3 +2,4 @@
 flask-wtf/
 
 __pycache__
+flask-sqlalchemy/
