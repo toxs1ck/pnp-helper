@@ -2,14 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ee953b32-6e69-4fe3-94f7-8583a4f5fe09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/pnp/templates/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnp/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/__init__.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnp/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnp/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnp/routes.py" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/routes.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnp/site.db" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/site.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnp/templates/account.html" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/templates/account.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnp/templates/layout.html" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/templates/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnp/templates/register.html" beforeDir="false" afterPath="$PROJECT_DIR$/pnp/templates/register.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -144,6 +142,7 @@
       <workItem from="1568304260226" duration="505000" />
       <workItem from="1568304821451" duration="5146000" />
       <workItem from="1568387067139" duration="4341000" />
+      <workItem from="1568403436755" duration="3670000" />
     </task>
     <task id="LOCAL-00001" summary="Added Login page">
       <created>1567289227793</created>
@@ -196,6 +195,6 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/DanMachi$app.coverage" NAME="app Coverage Results" MODIFIED="1567281258978" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/pnp_helper$app.coverage" NAME="app Coverage Results" MODIFIED="1568391734538" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/pnp_helper$app.coverage" NAME="app Coverage Results" MODIFIED="1568410235650" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
