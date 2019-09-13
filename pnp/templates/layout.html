@@ -37,20 +37,19 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="/user">Personal Info</a>
+                    <a class="nav-item nav-link" href="/home">Personal Info</a>
                     <a class="nav-item nav-link" href="/games">Games</a>
                 </div>
                 <!-- Navbar Right Side -->
-                {% if logged_in %}
                 <div class="navbar-nav">
-                    <a class="nav-item nav-link" href="/logout">Logout</a>
-                </div>
-                {% else %}
-                <div class="navbar-nav">
+                    {% if current_user.is_authenticated %}
+                    <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
+                    <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
+                    {% else %}
                     <a class="nav-item nav-link" href="{{ url_for('login') }}">Login</a>
                     <a class="nav-item nav-link" href="{{ url_for('register') }}">Register</a>
+                    {% endif %}
                 </div>
-                {% endif %}
             </div>
         </div>
     </nav>
