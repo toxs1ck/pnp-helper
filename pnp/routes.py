@@ -3,7 +3,7 @@ import os
 from PIL import Image
 from pnp import app, db, bcrypt
 from flask import render_template, flash, redirect, url_for, request
-from pnp.forms import RegistrationForm, LoginForm, UpdateAccountForm
+from pnp.forms import RegistrationForm, LoginForm, UpdateAccountForm, GameForm, CharacterForm
 from pnp.models import User, Game, Character
 from flask_login import login_user, current_user, logout_user, login_required
 
@@ -89,3 +89,23 @@ def account():
         form.birth_date.data = current_user.birth_date
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file, form=form)
+
+
+@app.route('/game/new', methods=['GET', 'POST'])
+@login_required
+def new_game():
+    form = GameForm()
+    if form.validate_on_submit():
+        flash('Your game has been created.', 'success')
+        return redirect(url_for('index'))
+    return render_template('create_game.html', title='New System', form=form)
+
+
+@app.route('/character', methods=['GET', 'POST'])
+@login_required
+def character():
+    form = CharacterForm()
+    if form.validate_on_submit():
+        flash('Your character has been updated.', 'success')
+        return redirect(url_for('character'))
+    return render_template('character.html', title='Character', form=form)

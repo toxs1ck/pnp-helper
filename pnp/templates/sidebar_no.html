@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block sidebar %}
+
+<div class="row">
+    // Main Section
+    <div class="col-md-9">
+        
+        // Messages
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+        // Content
+        
+        {% block content %}{% endblock %}
+        
+        
+    </div>
+</div>
+
+{% endblock sidebar %}

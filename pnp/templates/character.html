@@ -1,0 +1,42 @@
+{% extends "sidebar_game.html" %}
+{% block content %}
+
+    // Sidebar
+    {% if current_user.is_authenticated %}
+        <div class="col-md-3">
+            <div class="content-section">
+                <h3>Menu</h3>
+                <p class='text-muted'>
+                <ul class="list-group">
+                    <li class="list-group-item list-group-item-light">Information</li>
+                    <li class="list-group-item list-group-item-light">Characters</li>
+                    <li class="list-group-item list-group-item-light">Notes</li>
+                    <li class="list-group-item list-group-item-light">Simulator</li>
+                </ul>
+                </p>
+            </div>
+        </div>
+    {% endif %}
+
+    // Main Section
+    <div class="col-md-9">
+
+        // Messages
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+        {% for category, message in messages %}
+        <div class="alert alert-{{ category }}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+
+        // Content
+
+
+
+
+    </div>
+
+{% endblock content %}

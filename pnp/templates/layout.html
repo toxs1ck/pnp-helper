@@ -37,12 +37,22 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarToggle">
                 <div class="navbar-nav mr-auto">
-                    <a class="nav-item nav-link" href="/home">Personal Info</a>
-                    <a class="nav-item nav-link" href="/games">Games</a>
+                    <a class="nav-item nav-link" href="/">Home</a>
+                    <a class="nav-item nav-link" href="/all_games">Games</a>
+                    {% if current_user.role == 'player' %}
+                    <a class="nav-item nav-link" href="/game">My Games</a>
+                    <a class="nav-item nav-link" href="/character">My Characters</a>
+                    {% endif %}
                 </div>
                 <!-- Navbar Right Side -->
                 <div class="navbar-nav">
                     {% if current_user.is_authenticated %}
+                        {% if current_user.role == 'gamemaster' or current_user.role == 'admin' %}
+                            <a class="nav-item nav-link" href="{{ url_for('new_game') }}">New System</a>
+                        {% endif %}
+                        {% if current_user.role == 'admin' %}
+                            <a class="nav-item nav-link" href="/admin">Admin</a>
+                        {% endif %}
                     <a class="nav-item nav-link" href="{{ url_for('account') }}">Account</a>
                     <a class="nav-item nav-link" href="{{ url_for('logout') }}">Logout</a>
                     {% else %}
@@ -56,36 +66,9 @@
 </header>
 
 <main class="container" role="main">
-    <div class="row">
-        {% if current_user.is_authenticated %}
-        <div class="col-md-4">
-            <div class="content-section">
-                <h3>Menu</h3>
-                <p class='text-muted'>
-                <ul class="list-group">
-                    <li class="list-group-item list-group-item-light">Information</li>
-                    <li class="list-group-item list-group-item-light">Characters</li>
-                    <li class="list-group-item list-group-item-light">Notes</li>
-                    <li class="list-group-item list-group-item-light">Simulator</li>
-                </ul>
-                </p>
-            </div>
-        </div>
-        {% endif %}
 
-        <div class="col-md-8">
-            {% with messages = get_flashed_messages(with_categories=true) %}
-            {% if messages %}
-            {% for category, message in messages %}
-            <div class="alert alert-{{ category }}">
-                {{ message }}
-            </div>
-            {% endfor %}
-            {% endif %}
-            {% endwith %}
-            {% block content %}{% endblock %}
-        </div>
-    </div>
+        {% block content %}{% endblock content %}
+
 </main>
 
 </body>
