@@ -1,5 +1,5 @@
 
 flask-wtf/
-.idea
-__pycache__
+.idea/
+__pycache__/
 flask-sqlalchemy/
